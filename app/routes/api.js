@@ -18,8 +18,9 @@ router.get("/getUsers",(req,res)=>{
 
 router.post('/create-order', async (req, res) => {
     try {
+      let amount = req.body.amount;
       const options = {
-        amount: 10*100, // amount in the smallest currency unit
+        amount: amount, // amount in the smallest currency unit
         currency: 'INR',
         receipt: 'receipt_' + Math.random().toString(36).substring(7),
       };
